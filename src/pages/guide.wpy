@@ -1,0 +1,18 @@
+<style>
+</style>
+
+<template>
+
+</template>
+
+<script>
+import wepy from 'wepy';
+class Guide extends wepy.page {
+  config = {
+    navigationBarTitleText: '领队',
+    usingComponents: {}
+  };
+}
+export default Guide;
+</script>
+

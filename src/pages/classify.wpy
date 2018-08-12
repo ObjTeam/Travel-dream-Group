@@ -1,0 +1,18 @@
+<style>
+</style>
+
+<template>
+
+</template>
+
+<script>
+import wepy from 'wepy';
+class Classify extends wepy.page {
+  config = {
+    navigationBarTitleText: '分类',
+    usingComponents: {}
+  };
+}
+export default Classify;
+</script>
+

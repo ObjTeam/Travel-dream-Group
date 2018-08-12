@@ -1,7 +1,6 @@
 {
   "files.associations": {
-
     "*.wpy": "vue"
-
   },
+  "editor.formatOnSave": true,
 }

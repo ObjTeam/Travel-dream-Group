@@ -1,0 +1,243 @@
+<template>
+<view>
+  <view>
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="300">
+      <block>
+        <swiper-item>
+            <view style="background: red; height: 150px"></view>
+        </swiper-item>
+        <swiper-item>
+            <view style="background: green; height: 150px"></view>
+        </swiper-item>
+        <swiper-item>
+            <view style="background: blue; height: 150px"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="nav_list">
+    <i-row>
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate" >
+          <image src="../images/icon_nav_01_new.png" class="nav_icon"/>
+          <view class="nav_text">国内</view>
+        </navigator>
+      </i-col>
+
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate">
+          <image src="../images/icon_nav_02_new.png" class="nav_icon"/>
+          <view class="nav_text">省内</view>
+        </navigator>
+      </i-col>
+
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate">
+          <image src="../images/icon_nav_03_new.png" class="nav_icon"/>
+          <view class="nav_text">周边游</view>
+        </navigator>
+      </i-col>
+
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate">
+          <image src="../images/icon_nav_03_new.png" class="nav_icon"/>
+          <view class="nav_text">西部</view>
+        </navigator>
+      </i-col>
+
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate">
+          <image src="../images/icon_nav_03_new.png" class="nav_icon"/>
+          <view class="nav_text">港澳台</view>
+        </navigator>
+      </i-col>
+
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate">
+          <image src="../images/icon_nav_03_new.png" class="nav_icon"/>
+          <view class="nav_text">热门</view>
+        </navigator>
+      </i-col>
+
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate">
+          <image src="../images/icon_nav_03_new.png" class="nav_icon"/>
+          <view class="nav_text">最新活动</view>
+        </navigator>
+      </i-col>
+
+      <i-col span="6" i-class="col-class">
+        <navigator open-type="navigate" url="/pages/index">
+          <image src="../images/icon_nav_04_new.png" class="nav_icon"/>
+          <view class="nav_text">测试跳转</view>
+        </navigator>
+      </i-col>
+
+    </i-row>
+  </view>
+
+  <view>
+    <i-tabs current="{{current}}" bindchange="handleChange">
+      <i-tab key="tab1" title="本周活动">
+        <i-row>
+          <i-col span="8" i-class="col-class">
+            <i-card  extra="报名中" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+                <view slot="content">
+                  <view style="background: red; height: 50px"></view>
+                </view>
+                <view slot="footer">华侨城一日游</view>
+            </i-card>
+          </i-col>
+           <i-col span="8" i-class="col-class">
+            <i-card  extra="即将成型" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+                <view slot="content">
+                  <view style="background: green; height: 50px"></view>
+                </view>
+                <view slot="footer">华侨城一日游</view>
+            </i-card>
+          </i-col>
+           <i-col span="8" i-class="col-class">
+            <i-card  extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+                <view slot="content">
+                  <view style="background: green; height: 50px"></view>
+                </view>
+                <view slot="footer">华侨城一日游</view>
+            </i-card>
+          </i-col>
+        </i-row>
+
+      </i-tab>
+      <i-tab key="tab2" title="下周活动">2</i-tab>
+      <i-tab key="tab3" title="近期活动">3</i-tab>
+    </i-tabs>
+  </view>
+
+</view>
+</template>
+
+<script>
+import wepy from 'wepy';
+class Home extends wepy.page {
+  config = {
+    navigationBarTitleText: '旅行',
+    usingComponents: {
+      'i-button': '../components/ui//button/index',
+      'i-progress': '../components/ui/progress/index',
+      'i-icon': '../components/ui/icon/index',
+      'i-col': '../components/ui/col/index',
+      'i-row': '../components/ui/row/index',
+      'i-card': '../components/ui/card/index',
+      'i-tabs': '../components/ui/tabs/index',
+      'i-tab': '../components/ui/tab/index'
+    }
+  };
+
+  components = {};
+
+  data = {
+    indicatorDots: true,
+    toView: 'red',
+    scrollTop: 100,
+    current: 'tab1'
+  };
+
+  onLoad() {}
+
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+  }
+
+  methods = {
+    upper: function(e) {
+      console.log(e);
+    },
+    lower: function(e) {
+      console.log(e);
+    },
+    scroll: function(e) {
+      console.log(e);
+    },
+    tap: function(e) {
+      for (var i = 0; i < order.length; ++i) {
+        if (order[i] === this.data.toView) {
+          this.setData({
+            toView: order[i + 1]
+          });
+          break;
+        }
+      }
+    },
+    tapMove: function(e) {
+      this.setData({
+        scrollTop: this.data.scrollTop + 10
+      });
+    }
+  };
+}
+
+export default Home;
+</script>
+
+<style lang="less">
+.swiper {
+  height: 348rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.pos {
+  position: absolute;
+  top: 0rpx;
+  left: 0;
+  right: 0;
+  .search_content {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #efefee;
+    .icon-search,
+    .search_input {
+      color: #efefee;
+    }
+  }
+  .message {
+    display: block;
+    text-align: center;
+    margin-left: 20rpx;
+  }
+  .doc {
+    font-size: 16rpx;
+    display: block;
+  }
+}
+
+.nav_list {
+  color: #404040;
+  display: flex;
+  font-size: 26rpx;
+  justify-content: space-between;
+  padding: 17rpx 50rpx;
+  navigator {
+    text-align: center;
+  }
+  .nav_icon {
+    height: 80rpx;
+    margin: 0 auto;
+    width: 80rpx;
+    margin-bottom: 14rpx;
+  }
+  .nav_text {
+    font-size: 26rpx;
+  }
+}
+
+.recommend-title {
+  padding: 40rpx 0;
+  text-align: center;
+  color: #333;
+}
+</style>
