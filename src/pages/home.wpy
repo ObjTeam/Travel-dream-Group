@@ -1,5 +1,6 @@
 <template>
 <view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
   <view>
     <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="300">
       <block>
@@ -79,40 +80,134 @@
 
   <view>
     <i-tabs current="{{current}}" bindchange="handleChange">
-      <i-tab key="tab1" title="本周活动">
-        <i-row>
-          <i-col span="8" i-class="col-class">
-            <i-card  extra="报名中" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-                <view slot="content">
-                  <view style="background: red; height: 50px"></view>
-                </view>
-                <view slot="footer">华侨城一日游</view>
-            </i-card>
-          </i-col>
-           <i-col span="8" i-class="col-class">
-            <i-card  extra="即将成型" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-                <view slot="content">
-                  <view style="background: green; height: 50px"></view>
-                </view>
-                <view slot="footer">华侨城一日游</view>
-            </i-card>
-          </i-col>
-           <i-col span="8" i-class="col-class">
-            <i-card  extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-                <view slot="content">
-                  <view style="background: green; height: 50px"></view>
-                </view>
-                <view slot="footer">华侨城一日游</view>
-            </i-card>
-          </i-col>
-        </i-row>
-
-      </i-tab>
-      <i-tab key="tab2" title="下周活动">2</i-tab>
-      <i-tab key="tab3" title="近期活动">3</i-tab>
+      <i-tab key="tab1" title="本周活动"></i-tab>
+      <i-tab key="tab2" title="下周活动"></i-tab>
+      <i-tab key="tab3" title="近期活动"></i-tab>
     </i-tabs>
   </view>
+  <view>
+    <i-row offset="1">
+      <i-col span="8" i-class="col-class">
+        <view slot="content">
+          <view class="pic-card"></view>
+        </view>
+        <view slot="footer" class="pic-card-title">华侨城一日游</view>
+      </i-col>
+        <i-col span="8" i-class="col-class">
+        <view slot="content">
+          <view class="pic-card"></view>
+          </view>
+        <view slot="footer" class="pic-card-title">华侨城一日游</view>
+      </i-col>
+        <i-col span="8" i-class="col-class">
+          <view slot="content">
+            <view class="pic-card"></view>
+            </view>
+          <view slot="footer" class="pic-card-title">华侨城一日游</view>
+      </i-col>
+    </i-row>
+    <i-row offset="1">
+      <i-col span="8" i-class="col-class">
+        <view slot="content">
+          <view class="pic-card"></view>
+        </view>
+        <view slot="footer" class="pic-card-title">华侨城一日游</view>
+      </i-col>
+        <i-col span="8" i-class="col-class">
+        <view slot="content">
+          <view class="pic-card"></view>
+          </view>
+        <view slot="footer" class="pic-card-title">华侨城一日游</view>
+      </i-col>
+        <i-col span="8" i-class="col-class">
+          <view slot="content">
+            <view class="pic-card"></view>
+            </view>
+          <view slot="footer" class="pic-card-title">华侨城一日游</view>
+      </i-col>
+    </i-row>
+  </view>
+  <view>
+    <view class="view-card-title">
+        <span class="view-card-title-mark"></span>
+        <span>热门活动</span>
+    </view>
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="300">
+      <block style="height:300px">
+        <swiper-item>
+          <view>
+            <i-row>
+              <i-col span="24">
+                <view style="background: red; height: 150px"></view>
+              </i-col>
+              <i-col span="12">
+                <view style="background: green; height: 150px"></view>
+              </i-col>
+               <i-col span="12">
+                <view style="background: yellow; height: 150px"></view>
+              </i-col>
+            </i-row>
+          </view>
+        </swiper-item>
 
+        <swiper-item>
+          <view>
+            <i-row>
+              <i-col span="24">
+                <view style="background: red; height: 150px"></view>
+              </i-col>
+              <i-col span="12">
+                <view style="background: green; height: 150px"></view>
+              </i-col>
+               <i-col span="12">
+                <view style="background: yellow; height: 150px"></view>
+              </i-col>
+            </i-row>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view>
+    <view class="view-card-title">
+        <span class="view-card-title-mark"></span>
+        <span>随便看看</span>
+    </view>
+    <van-card
+      title="五一假期三门岛三日游"
+      desc="出行时间2018年8月18日"
+      num="30"
+      price="138"
+      thumb="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg"
+    >
+      <view slot="footer">
+      </view>
+    </van-card>
+
+    <van-card
+      title="五一假期三门岛三日游"
+      desc="出行时间2018年8月18日"
+      num="30"
+      price="138"
+      thumb="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg"
+    >
+      <view slot="footer">
+      </view>
+    </van-card>
+
+
+    <van-card
+      title="五一假期三门岛三日游"
+      desc="出行时间2018年8月18日"
+      num="30"
+      price="138"
+      thumb="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg"
+    >
+      <view slot="footer">
+      </view>
+    </van-card>
+  </view>
 </view>
 </template>
 
@@ -122,14 +217,16 @@ class Home extends wepy.page {
   config = {
     navigationBarTitleText: '旅行',
     usingComponents: {
-      'i-button': '../components/ui//button/index',
-      'i-progress': '../components/ui/progress/index',
-      'i-icon': '../components/ui/icon/index',
-      'i-col': '../components/ui/col/index',
-      'i-row': '../components/ui/row/index',
-      'i-card': '../components/ui/card/index',
-      'i-tabs': '../components/ui/tabs/index',
-      'i-tab': '../components/ui/tab/index'
+      'i-button': '../components/iview//button/index',
+      'i-progress': '../components/iview/progress/index',
+      'i-icon': '../components/iview/icon/index',
+      'i-col': '../components/iview/col/index',
+      'i-row': '../components/iview/row/index',
+      'i-card': '../components/iview/card/index',
+      'i-tabs': '../components/iview/tabs/index',
+      'i-tab': '../components/iview/tab/index',
+      'van-search': '../components/vant/search/index',
+      'van-card': '../components/vant/card/index'
     }
   };
 
@@ -160,16 +257,7 @@ class Home extends wepy.page {
     scroll: function(e) {
       console.log(e);
     },
-    tap: function(e) {
-      for (var i = 0; i < order.length; ++i) {
-        if (order[i] === this.data.toView) {
-          this.setData({
-            toView: order[i + 1]
-          });
-          break;
-        }
-      }
-    },
+    tap: function(e) {},
     tapMove: function(e) {
       this.setData({
         scrollTop: this.data.scrollTop + 10
@@ -239,5 +327,32 @@ export default Home;
   padding: 40rpx 0;
   text-align: center;
   color: #333;
+}
+
+.pic-card {
+  width: 60px;
+  height: 60px;
+  margin: 5px auto;
+  background: red;
+}
+
+.pic-card-title {
+  text-align: center;
+  font-size: 10px;
+}
+
+.view-card-title {
+  width: 100%;
+  height: 13px;
+  border: 10px solid #fff;
+  line-height: 30px;
+  margin: 20px 0;
+}
+
+.view-card-title-mark {
+  width: 4px;
+  height: 100%;
+  display: inline-block;
+  background-color: aqua;
 }
 </style>

@@ -114,9 +114,9 @@ export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: 'test',
     usingComponents: {
-      'i-button': '../components/ui//button/index',
-      'i-progress': '../components/ui/progress/index',
-      'i-icon': '../components/ui/icon/index'
+      'i-button': '../components/iview//button/index',
+      'i-progress': '../components/iview/progress/index',
+      'i-icon': '../components/iview/icon/index'
     }
   };
   components = {
